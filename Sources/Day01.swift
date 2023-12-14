@@ -90,6 +90,8 @@ struct Day01: AdventDay {
         func getDigits(in line: String) -> [Int] {
             var result: [Int] = []
             var trees: [NumberTree] = []
+            
+            print("Digits trees: \(digits)")
             for c in line {
                 if let i = c.wholeNumberValue {
                     result.append(i)
