@@ -10,16 +10,6 @@ final class Day02Tests: XCTestCase {
     Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
     Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
 """
-    
-    let testData2 = """
-two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen
-"""
 
   func testPart1() throws {
     let challenge = Day02(data: testData)
@@ -27,8 +17,8 @@ zoneight234
   }
 
   func testPart2() throws {
-    let challenge = Day02(data: testData2)
-    XCTAssertEqual(String(describing: challenge.part2()), "281")
+    let challenge = Day02(data: testData)
+    XCTAssertEqual(String(describing: challenge.part2()), "2286")
   }
 }
 

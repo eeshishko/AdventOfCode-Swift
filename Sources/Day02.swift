@@ -72,6 +72,23 @@ struct Day02: AdventDay {
     }
     
     func part2() -> Any {
-        return 0
+        return entities.map { entity in
+            let gameInfo = GameInfo(from: entity)
+            var minNumberOfBlues = 0
+            var minNumberOfReds = 0
+            var minNumberOfGreens = 0
+            for grab in gameInfo.grabs {
+                if grab.numberOfBlues > minNumberOfBlues {
+                    minNumberOfBlues = grab.numberOfBlues
+                }
+                if grab.numberOfReds > minNumberOfReds {
+                    minNumberOfReds = grab.numberOfReds
+                }
+                if grab.numberOfGreens > minNumberOfGreens {
+                    minNumberOfGreens = grab.numberOfGreens
+                }
+            }
+            return minNumberOfReds * minNumberOfBlues * minNumberOfGreens
+        }.reduce(0, +)
     }
 }
